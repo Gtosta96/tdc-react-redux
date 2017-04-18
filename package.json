@@ -1,0 +1,34 @@
+{
+  "name": "tdc-react-redux",
+  "version": "1.0.0",
+  "description": "Projeto Feito para apresentação TDC Florianópolis - 04/05/17",
+  "main": "app/src/app.js",
+  "repository": "https://github.com/Gtosta96/tdc-react-redux",
+  "author": "Gtosta96",
+  "license": "MIT",
+  "scripts": {
+    "dev": "./node_modules/.bin/webpack-dev-server --colors --inline --hot --history-api-fallback --config webpack.config.js --open --content-base app/public"
+  },
+  "dependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

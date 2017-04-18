@@ -1,0 +1,21 @@
+{
+	"vsicons.projectDetection.autoReload": true,
+	"window.zoomLevel": 0,
+
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+
+	"vsicons.presets.angular": false,
+
+	"css.validate": false,
+
+	"files.exclude": {
+		"node_modules": true
+	},
+
+	"search.exclude": {
+		"node_modules": true,
+		"dist": true,
+		"app/src/vendor": true
+	}
+}
