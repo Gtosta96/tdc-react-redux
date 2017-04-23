@@ -1,0 +1,36 @@
+body {
+	color: #7748bc;	
+	font-family: 'Lato', sans-serif;
+}
+
+.counter {
+	font-family: 'Consolas';
+	font-size: 100px !important;
+	text-shadow: 1px 1px 1px #e3e3e3;
+}
+
+.tdc-button {
+	background-color: rgba(119, 72, 188, 0.1);
+	border-radius: 50%;
+	color: #7748bc;
+	font-size: 30px;
+	margin: 20px;	
+}
+
+.tdc-button:hover,
+.tdc-button:active,
+.tdc-button:focus {
+	background-color: #7748bc;
+	color: #fff;
+	text-decoration: none;
+}
+
+.title {
+	bottom: 0;
+	font-size: 20px;
+	opacity: 0.4;
+	padding: 10px 30px;
+	position: absolute;
+	right: 0;
+	text-transform: uppercase;
+}
