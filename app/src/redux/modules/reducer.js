@@ -9,6 +9,12 @@ export default function reducer(state = initialState, action) {
 				counter: state.counter + action.value
 			};
 
+		case 'REMOVE_COUNTER':
+			return {
+				...state,
+				counter: state.counter - action.value
+			};
+
 		default:
 			return state;
 	}

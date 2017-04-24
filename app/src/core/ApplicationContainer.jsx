@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		addCounter() {
 			dispatch({ type: 'ADD_COUNTER', value: 1 });
+		},
+		removeCounter() {
+			dispatch({ type: 'REMOVE_COUNTER', value: 1 });
 		}
 	};
 };
