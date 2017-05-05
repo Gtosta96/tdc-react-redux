@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import * as ReactRedux from 'react-redux';
 
@@ -22,8 +23,11 @@ const mapDispatchToProps = (dispatch) => {
 		addCounter() {
 			dispatch({ type: 'ADD_COUNTER', value: 1 });
 		},
-		removeCounter() {
-			dispatch({ type: 'REMOVE_COUNTER', value: 1 });
+		subCounter() {
+			dispatch({ type: 'SUB_COUNTER', value: 1 });
+		},
+		saveCounter(value) {
+			dispatch({ type: 'SAVE_COUNTER', value: value });
 		}
 	};
 };

@@ -34,3 +34,12 @@ body {
 	right: 0;
 	text-transform: uppercase;
 }
+
+.saved-counters {
+	word-wrap: break-word;
+	border-radius: 0;
+	display: block;
+	margin-top: 30px;
+	padding: 20px;
+	word-spacing: 10px;
+}
