@@ -15,7 +15,7 @@ const Application = (props) => {
 	return (
 		<div className="container">
 			<h1 className="title">
-				<img width="50" alt="tdc-logo" src="../../tdc_logo.png" /> TDC Floripa - React + Redux
+				<img width="50" alt="tdc-logo" src="../../tdc_logo.png" /> TDC São Paulo - React + Redux
 			</h1>
 			<div className="text-center">
 				<h1 className="counter">{ props.counter }</h1>

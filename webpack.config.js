@@ -1,51 +1,64 @@
-const debug = process.env.NODE_ENV !== 'production';
-
-const webpack = require('webpack');
 const path = require('path');
+var webpack = require('webpack');
 
 const config = {
 	context: path.join(__dirname, '/app/src'),
-	devtool: debug ? 'inline-sourcemap' : null,
-	entry: './app.jsx',
-
-	module: {
-		preLoaders: [
-			{
-				test: /\.jsx?$/,
-				loader: 'eslint',
-				exclude: /node_modules/
-			}
-		],
-		loaders: [
-			{
-				test: /\.jsx?$/,
-				loader: 'babel-loader',
-				exclude: /node_modules/,
-				query: {
-					presets: ['react', 'es2015'],
-					plugins: ['transform-object-rest-spread']
-				}
-			}
-		]
-	},
-	resolve: {
-		extensions: ['', '.js', '.jsx']
-	},
+	devtool: 'inline-sourcemap',
+	entry: [
+		'react-hot-loader/patch',
+		// 'webpack-dev-server/client?http://localhost:8080',
+		// 'webpack/hot/only-dev-server',
+		'./app.jsx'
+	],
 	output: {
 		path: path.join(__dirname, '/app/public/js/'),
 		publicPath: 'app/dist/js/',
-		filename: 'app.min.js'
+		filename: 'app.min.js',
 	},
-	eslint: {
-		failOnWarning: false,
-		failOnError: false
+	resolve: {
+		extensions: ['*', '.js', '.jsx'],
 	},
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
+	],
 
-	plugins: debug ? [] : [
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
-	]
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				enforce: 'pre',
+				loader: 'eslint-loader',
+				exclude: /node_modules/,
+				options: { failOnWarning: false, failOnError: false },
+			}, {
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'react-hot-loader/webpack'
+					}, {
+						loader: 'babel-loader',
+						query: {
+							presets: [
+								'react',
+								['es2015', { modules: false }]
+							],
+							plugins: ['transform-object-rest-spread'],
+						},
+					}
+				],
+			},
+		],
+	},
+	devServer: {
+		contentBase: path.join(__dirname, 'app/public'),
+		port: 8080,
+		historyApiFallback: true,
+		open: true,
+		inline: true
+	}
 };
 
 module.exports = config;

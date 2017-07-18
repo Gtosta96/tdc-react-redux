@@ -1,6 +1,6 @@
 const initialState = {
 	counter: 0,
-	savedCounters: []
+	savedCounters: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -9,13 +9,13 @@ export default function reducer(state = initialState, action) {
 		case 'ADD_COUNTER':
 			return {
 				...state,
-				counter: state.counter + action.value
+				counter: state.counter + action.value,
 			};
 
 		case 'SUB_COUNTER':
 			return {
 				...state,
-				counter: state.counter - action.value
+				counter: state.counter - action.value,
 			};
 
 		case 'SAVE_COUNTER':
@@ -24,8 +24,8 @@ export default function reducer(state = initialState, action) {
 				counter: 0,
 				savedCounters: [
 					...state.savedCounters,
-					action.value
-				]
+					action.value,
+				],
 			};
 
 		default:
