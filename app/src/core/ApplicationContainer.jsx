@@ -26,8 +26,8 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch({ type: 'SUB_COUNTER', value: 1 });
 		},
 		saveCounter(value) {
-			dispatch({ type: 'SAVE_COUNTER', value: value });
-		}
+			dispatch({ type: 'SAVE_COUNTER', value });
+		},
 	};
 };
 

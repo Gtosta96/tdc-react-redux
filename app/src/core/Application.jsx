@@ -1,16 +1,15 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Application = (props) => {
-
-	const showSavedCounters = () => {
-		const length = props.savedCounters.length - 1;
-		const presentational = props.savedCounters.map((savedCounter, index) => {
+	const showSavedCounters = (counters) => {
+		const length = counters.length - 1;
+		const presentational = counters.map((savedCounter, index) => {
 			return index !== length ? `${savedCounter}, ` : savedCounter;
 		});
 
-		return <div>[ { presentational } ]</div>
-	}
+		return <div>[ { presentational } ]</div>;
+	};
 
 	return (
 		<div className="container">
@@ -19,12 +18,12 @@ const Application = (props) => {
 			</h1>
 			<div className="text-center">
 				<h1 className="counter">{ props.counter }</h1>
-				<button className="btn tdc-button btn-link" onClick={ () => props.addCounter() }>➕</button>
-				<button className="btn tdc-button btn-link" onClick={ () => props.subCounter() }>➖</button>
-				<button className="btn tdc-button btn-link" onClick={ () => props.saveCounter(props.counter) }>✔️</button>
+				<button className="btn tdc-button btn-link" onClick={ () => { props.addCounter(); } }>➕</button>
+				<button className="btn tdc-button btn-link" onClick={ () => { props.subCounter(); } }>➖</button>
+				<button className="btn tdc-button btn-link" onClick={ () => { props.saveCounter(props.counter); } }>✔️</button>
 
 				<div className="btn tdc-button saved-counters">
-					{ showSavedCounters() }
+					{ showSavedCounters(props.savedCounters) }
 				</div>
 			</div>
 		</div>
@@ -32,9 +31,11 @@ const Application = (props) => {
 };
 
 Application.propTypes = {
-	counter: React.PropTypes.number.isRequired,
-	addCounter: React.PropTypes.func.isRequired,
-	subCounter: React.PropTypes.func.isRequired
+	counter: PropTypes.number.isRequired,
+	savedCounters: PropTypes.arrayOf(PropTypes.number).isRequired,
+	addCounter: PropTypes.func.isRequired,
+	subCounter: PropTypes.func.isRequired,
+	saveCounter: PropTypes.func.isRequired,
 };
 
 export default Application;

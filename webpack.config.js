@@ -1,5 +1,5 @@
 const path = require('path');
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 const config = {
 	context: path.join(__dirname, '/app/src'),
@@ -8,7 +8,7 @@ const config = {
 		'react-hot-loader/patch',
 		// 'webpack-dev-server/client?http://localhost:8080',
 		// 'webpack/hot/only-dev-server',
-		'./app.jsx'
+		'./app.jsx',
 	],
 	output: {
 		path: path.join(__dirname, '/app/public/js/'),
@@ -35,20 +35,7 @@ const config = {
 			}, {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				use: [
-					{
-						loader: 'react-hot-loader/webpack'
-					}, {
-						loader: 'babel-loader',
-						query: {
-							presets: [
-								'react',
-								['es2015', { modules: false }]
-							],
-							plugins: ['transform-object-rest-spread'],
-						},
-					}
-				],
+				loaders: ['react-hot-loader/webpack', 'babel-loader'],
 			},
 		],
 	},
@@ -57,8 +44,8 @@ const config = {
 		port: 8080,
 		historyApiFallback: true,
 		open: true,
-		inline: true
-	}
+		inline: true,
+	},
 };
 
 module.exports = config;
