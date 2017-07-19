@@ -1,28 +1,75 @@
+
+html,
 body {
-	color: #7748bc;	
-	font-family: 'Lato', sans-serif;
+	background: #EFEFEF;
 }
 
-.counter {
-	font-family: 'Consolas';
-	font-size: 100px !important;
-	text-shadow: 1px 1px 1px #e3e3e3;
+input,
+textarea {
+	border: 0;
+	resize: none;
+	background: transparent;
 }
 
-.tdc-button {
-	background-color: rgba(119, 72, 188, 0.1);
+.card-title {
+	color: #333333;
+	font-family: 'Impact';
+	font-size: 20px;
+	padding: 6px;
+}
+
+.card-description {
+	font-size: 16px;
+	padding: 6px;
+	width: 100%;
+}
+
+.color {
 	border-radius: 50%;
-	color: #7748bc;
-	font-size: 30px;
-	margin: 20px;	
 }
 
-.tdc-button:hover,
-.tdc-button:active,
-.tdc-button:focus {
-	background-color: #7748bc;
-	color: #fff;
-	text-decoration: none;
+.card {
+	background: #FFFFFF;
+	box-shadow: 1px 1px 1px 1px #d3d3d3;
+	margin-top: 30px;
+	padding: 30px;
+}
+
+.btn-card-options {
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 0;
+}
+
+.btn-card-options:hover {
+	box-shadow: 1px 1px 1px 1px #D3D3D3;
+	border: 1px solid #666666
+}
+
+.btn-card-options.Red { background-color: #F44336 }
+.btn-card-options.Pink { background-color: #E91E63 }
+.btn-card-options.Purple { background-color: #9C27B0 }
+.btn-card-options.DeepPurple { background-color: #673AB7 }
+.btn-card-options.Indigo { background-color: #3F51B5 }
+.btn-card-options.Blue { background-color: #2196F3 }
+.btn-card-options.Light Blue { background-color: #03A9F4 }
+.btn-card-options.Cyan { background-color: #00BCD4 }
+.btn-card-options.Teal { background-color: #009688 }
+.btn-card-options.Green { background-color: #4CAF50 }
+.btn-card-options.LightGreen { background-color: #8BC34A }
+.btn-card-options.Lime { background-color: #CDDC39 }
+.btn-card-options.Yellow { background-color: #FFEB3B }
+.btn-card-options.Amber { background-color: #FFC107 }
+.btn-card-options.Orange { background-color: #FF9800 }
+.btn-card-options.DeepOrange { background-color: #FF5722 }
+.btn-card-options.Brown { background-color: #795548 }
+
+body {
+	color: #666;	
+	font-family: 'Lato', sans-serif;
 }
 
 .title {
@@ -33,13 +80,4 @@ body {
 	position: absolute;
 	right: 0;
 	text-transform: uppercase;
-}
-
-.saved-counters {
-	word-wrap: break-word;
-	border-radius: 0;
-	display: block;
-	margin-top: 30px;
-	padding: 20px;
-	word-spacing: 10px;
 }

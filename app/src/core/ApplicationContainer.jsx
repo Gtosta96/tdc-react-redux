@@ -19,14 +19,16 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addCounter() {
-			dispatch({ type: 'ADD_COUNTER', value: 1 });
+		setColor(color) {
+			dispatch({ type: 'SET_COLOR', color });
 		},
-		subCounter() {
-			dispatch({ type: 'SUB_COUNTER', value: 1 });
-		},
-		saveCounter(value) {
-			dispatch({ type: 'SAVE_COUNTER', value });
+		saveCard(title, description, color) {
+			dispatch({
+				type: 'SAVE_CARD',
+				title,
+				description,
+				color,
+			});
 		},
 	};
 };

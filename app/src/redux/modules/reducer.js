@@ -1,31 +1,25 @@
 const initialState = {
 	counter: 0,
 	savedCounters: [],
+	colors: {
+		available: ['Red', 'Pink', 'Purple', 'DeepPurple',
+			'Indigo', 'Blue', 'Light', 'Cyan', 'Teal', 'Green',
+			'LightGreen', 'Lime', 'Yellow', 'Amber', 'Orange',
+			'DeepOrange', 'Brown'],
+		active: 'Red',
+	},
 };
 
 export default function reducer(state = initialState, action) {
 	switch (action.type) {
 
-		case 'ADD_COUNTER':
+		case 'SET_COLOR':
 			return {
 				...state,
-				counter: state.counter + action.value,
-			};
-
-		case 'SUB_COUNTER':
-			return {
-				...state,
-				counter: state.counter - action.value,
-			};
-
-		case 'SAVE_COUNTER':
-			return {
-				...state,
-				counter: 0,
-				savedCounters: [
-					...state.savedCounters,
-					action.value,
-				],
+				colors: {
+					...state.colors,
+					active: action.color,
+				},
 			};
 
 		default:

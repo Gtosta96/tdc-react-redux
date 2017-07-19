@@ -1,41 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Card from './Card';
+import Tdc from './Tdc';
+
 const Application = (props) => {
-	const showSavedCounters = (counters) => {
-		const length = counters.length - 1;
-		const presentational = counters.map((savedCounter, index) => {
-			return index !== length ? `${savedCounter}, ` : savedCounter;
-		});
-
-		return <div>[ { presentational } ]</div>;
-	};
-
 	return (
 		<div className="container">
-			<h1 className="title">
-				<img width="50" alt="tdc-logo" src="../../tdc_logo.png" /> TDC São Paulo - React + Redux
-			</h1>
-			<div className="text-center">
-				<h1 className="counter">{ props.counter }</h1>
-				<button className="btn tdc-button btn-link" onClick={ () => { props.addCounter(); } }>➕</button>
-				<button className="btn tdc-button btn-link" onClick={ () => { props.subCounter(); } }>➖</button>
-				<button className="btn tdc-button btn-link" onClick={ () => { props.saveCounter(props.counter); } }>✔️</button>
-
-				<div className="btn tdc-button saved-counters">
-					{ showSavedCounters(props.savedCounters) }
+			<div className="row">
+				<div className="col-md-6">
+					<h2># todo</h2>
+					<Card colors={ props.colors } />
+				</div>
+				<div className="col-md-6">
+					<div className="col-md-12">
+						<h2># done</h2>
+					</div>
 				</div>
 			</div>
+			<Tdc title="TDC SP - React + Redux" />
 		</div>
 	);
 };
 
 Application.propTypes = {
-	counter: PropTypes.number.isRequired,
-	savedCounters: PropTypes.arrayOf(PropTypes.number).isRequired,
-	addCounter: PropTypes.func.isRequired,
-	subCounter: PropTypes.func.isRequired,
-	saveCounter: PropTypes.func.isRequired,
+	colors: PropTypes.shape({
+		available: PropTypes.arrayOf(PropTypes.string).isRequired,
+		active: PropTypes.string.isRequired,
+	}).isRequired,
+	setColor: PropTypes.func.isRequired,
 };
 
 export default Application;
