@@ -106,6 +106,20 @@ textarea {
 .card.DeepOrange { background-color: #FF5722 }
 .card.Brown { background-color: #795548 } 
 
+/* .card.Red input, .card.Red textarea,
+.card.Pink input, .card.Pink textarea,
+.card.Purple input, .card.Purple textarea,
+.card.DeepPurple input, .card.DeepPurple textarea,
+.card.Indigo input, .card.Indigo textarea,
+.card.Blue input, .card.Blue textarea,
+.card.Teal input, .card.Teal textarea,
+.card.DeepOrange input, .card.DeepOrange textarea,
+.card.Brown input, .card.Brown textarea,
+.card.BlueGray input, .card.BlueGray textarea,
+.card.Black input, .card.Black textarea {
+	color: #FFF;
+} */
+
 body {
 	color: #666;	
 	font-family: 'Lato', sans-serif;
