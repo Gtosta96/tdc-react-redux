@@ -55,7 +55,7 @@ textarea {
 .btn-card-options.DeepPurple { background-color: #673AB7 }
 .btn-card-options.Indigo { background-color: #3F51B5 }
 .btn-card-options.Blue { background-color: #2196F3 }
-.btn-card-options.Light Blue { background-color: #03A9F4 }
+.btn-card-options.LightBlue { background-color: #03A9F4 }
 .btn-card-options.Cyan { background-color: #00BCD4 }
 .btn-card-options.Teal { background-color: #009688 }
 .btn-card-options.Green { background-color: #4CAF50 }
@@ -66,6 +66,24 @@ textarea {
 .btn-card-options.Orange { background-color: #FF9800 }
 .btn-card-options.DeepOrange { background-color: #FF5722 }
 .btn-card-options.Brown { background-color: #795548 }
+
+ .card.Red { background-color: #F44336 }
+.card.Pink { background-color: #E91E63 }
+.card.Purple { background-color: #9C27B0 }
+.card.DeepPurple { background-color: #673AB7 }
+.card.Indigo { background-color: #3F51B5 }
+.card.Blue { background-color: #2196F3 }
+.card.LightBlue { background-color: #03A9F4 }
+.card.Cyan { background-color: #00BCD4 }
+.card.Teal { background-color: #009688 }
+.card.Green { background-color: #4CAF50 }
+.card.LightGreen { background-color: #8BC34A }
+.card.Lime { background-color: #CDDC39 }
+.card.Yellow { background-color: #FFEB3B }
+.card.Amber { background-color: #FFC107 }
+.card.Orange { background-color: #FF9800 }
+.card.DeepOrange { background-color: #FF5722 }
+.card.Brown { background-color: #795548 } 
 
 body {
 	color: #666;	

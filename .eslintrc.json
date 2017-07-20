@@ -1,8 +1,8 @@
 {
 	"extends": ["airbnb"],
-  "plugins": ["react", "jsx-a11y", "import"],
+	"plugins": ["react", "jsx-a11y", "import"],
 	"env": { "node": true, "browser": true, "mocha": true },
-  "rules": {
+	"rules": {
 		"no-tabs": 0,
 		"no-use-before-define": 0,
 		"indent": [2, "tab", { "SwitchCase": 1 }],
@@ -10,9 +10,8 @@
 		"arrow-parens": "off",
 		"no-underscore-dangle": "off",
 		"max-len": ["error", 150],
-		"arrow-body-style": ["error", "always"],
 
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
 
 		"react/jsx-indent": [1, "tab"],
 		"react/jsx-indent-props": [1, "tab"],

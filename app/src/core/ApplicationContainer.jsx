@@ -2,6 +2,7 @@ import React from 'react';
 import * as ReactRedux from 'react-redux';
 
 import Application from './Application';
+import { saveCard, moveCard } from '../redux/modules/reducer';
 
 class ApplicationContainer extends React.Component {
 	render() {
@@ -11,26 +12,18 @@ class ApplicationContainer extends React.Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return (
-		state
-	);
-};
+const mapStateToProps = (state) => state;
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		setColor(color) {
-			dispatch({ type: 'SET_COLOR', color });
-		},
-		saveCard(title, description, color) {
-			dispatch({
-				type: 'SAVE_CARD',
-				title,
-				description,
-				color,
-			});
-		},
-	};
-};
+const mapDispatchToProps = (dispatch) => ({
+	setColor(color) {
+		dispatch({ type: 'SET_COLOR', payload: color });
+	},
+	saveCard(id, title, description, color) {
+		dispatch(saveCard(id, title, description, color));
+	},
+	moveCard(id, title, description, color) {
+		dispatch(moveCard(id, title, description, color));
+	},
+});
 
 export default ReactRedux.connect(mapStateToProps,	mapDispatchToProps)(ApplicationContainer);

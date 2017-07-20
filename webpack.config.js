@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const config = {
-	context: path.join(__dirname, '/app/src'),
+	context: path.resolve(__dirname, 'app/src'),
 	devtool: 'inline-sourcemap',
 	entry: [
 		'react-hot-loader/patch',
@@ -11,7 +11,7 @@ const config = {
 		'./app.jsx',
 	],
 	output: {
-		path: path.join(__dirname, '/app/public/js/'),
+		path: path.resolve(__dirname, 'app/public/js'),
 		publicPath: 'app/dist/js/',
 		filename: 'app.min.js',
 	},
@@ -40,7 +40,7 @@ const config = {
 		],
 	},
 	devServer: {
-		contentBase: path.join(__dirname, 'app/public'),
+		contentBase: path.resolve(__dirname, 'app/public'),
 		port: 8080,
 		historyApiFallback: true,
 		open: true,
