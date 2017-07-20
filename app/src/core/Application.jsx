@@ -11,7 +11,7 @@ const Application = (props) => (
 	<div className="container">
 		<div className="row">
 			<div className="col-md-6">
-				<h2># todo</h2>
+				<h2>todo</h2>
 				<Card
 					id={ uuidv4() }
 					activeColor={ props.colors.active }
@@ -27,9 +27,9 @@ const Application = (props) => (
 						)) }
 				</Card >
 			</div>
-			<div className="col-md-6">
-				<div className="col-md-12">
-					<h2># done</h2>
+			<div className="col-md-6" style={ { position: 'absolute', right: '0' } }>
+				<div className="col-md-12 done-section">
+					<h2>done</h2>
 					{
 						props.cards.done.map((card) => (
 							<Card
@@ -48,8 +48,8 @@ const Application = (props) => (
 
 		<div className="row">
 			<div className="col-md-6">
-				<div className="col-md-12">
-					<h2># doing</h2>
+				<div className="col-md-12 doing-section">
+					<h2>doing</h2>
 					{
 						props.cards.todo.map((card) => (
 							<Card
@@ -58,7 +58,7 @@ const Application = (props) => (
 								title={ card.title }
 								description={ card.description }
 								activeColor={ card.color }
-								buttonText={ 'Done' }
+								buttonText={ '✔' }
 								onClick={ props.moveCard }
 								readOnly
 							/>

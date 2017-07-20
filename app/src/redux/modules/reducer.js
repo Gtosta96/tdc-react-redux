@@ -1,7 +1,7 @@
 const initialState = {
 	colors: {
 		available: ['Red', 'Pink', 'Purple', 'DeepPurple',
-			'Indigo', 'Blue', 'LightBlue', 'Cyan', 'Teal', 'Green',
+			'Indigo', 'Blue', 'Cyan', 'Teal', 'Green',
 			'LightGreen', 'Lime', 'Yellow', 'Amber', 'Orange',
 			'DeepOrange', 'Brown'],
 		active: 'Red',

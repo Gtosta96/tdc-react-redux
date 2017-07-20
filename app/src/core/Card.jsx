@@ -14,7 +14,7 @@ const Card = ({ id, title, description, readOnly, activeColor, buttonText, onCli
 	};
 
 	return (
-		<div className={ `col-md-12 card ${activeColor}` }>
+		<div className={ `col-md-12 card animate ${activeColor}` }>
 			<div className="col-md-12">
 				<input
 					type="text"
@@ -40,7 +40,7 @@ const Card = ({ id, title, description, readOnly, activeColor, buttonText, onCli
 					buttonText && onClick &&
 					<button
 						type="button"
-						className="btn btn-link pull-right"
+						className="btn btn-link pull-right btn-cta animate"
 						onClick={ _onClick }
 					>
 						{ buttonText }
