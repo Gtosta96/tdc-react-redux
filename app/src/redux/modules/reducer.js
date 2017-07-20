@@ -7,7 +7,7 @@ const initialState = {
 		active: 'Red',
 	},
 	cards: {
-		todo: [],
+		doing: [],
 		done: [],
 	},
 };
@@ -28,7 +28,7 @@ export default function reducer(state = initialState, action) {
 				...state,
 				cards: {
 					...state.cards,
-					todo: [...state.cards.todo, action.payload],
+					doing: [...state.cards.doing, action.payload],
 				},
 			};
 
@@ -37,8 +37,17 @@ export default function reducer(state = initialState, action) {
 				...state,
 				cards: {
 					...state.cards,
-					todo: state.cards.todo.filter(card => card.id !== action.payload.id),
+					doing: state.cards.doing.filter(card => card.id !== action.payload.id),
 					done: [...state.cards.done, action.payload],
+				},
+			};
+
+		case 'REMOVE_CARD':
+			return {
+				...state,
+				cards: {
+					...state.cards,
+					doing: state.cards.doing.filter(card => card.id !== action.payload.id),
 				},
 			};
 
@@ -58,5 +67,12 @@ export function moveCard(id, title, description, color) {
 	return {
 		type: 'MOVE_CARD',
 		payload: { id, title, description, color },
+	};
+}
+
+export function removeCard(id) {
+	return {
+		type: 'REMOVE_CARD',
+		payload: { id },
 	};
 }

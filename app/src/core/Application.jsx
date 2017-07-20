@@ -15,16 +15,18 @@ const Application = (props) => (
 				<Card
 					id={ uuidv4() }
 					activeColor={ props.colors.active }
-					buttonText={ 'Salvar' }
+					clickText={ 'Salvar' }
 					onClick={ props.saveCard }
 				>
-					{ props.colors.available.map((color) => (
-						<ColorButton
-							key={ color }
-							color={ color }
-							setColor={ props.setColor }
-						/>
-						)) }
+					{
+						props.colors.available.map((color) => (
+							<ColorButton
+								key={ color }
+								color={ color }
+								setColor={ props.setColor }
+							/>
+						))
+					}
 				</Card >
 			</div>
 			<div className="col-md-6" style={ { position: 'absolute', right: '0' } }>
@@ -51,15 +53,17 @@ const Application = (props) => (
 				<div className="col-md-12 doing-section">
 					<h2>doing</h2>
 					{
-						props.cards.todo.map((card) => (
+						props.cards.doing.map((card) => (
 							<Card
 								key={ card.id }
 								id={ card.id }
 								title={ card.title }
 								description={ card.description }
 								activeColor={ card.color }
-								buttonText={ '✔' }
+								clickText={ '✔' }
 								onClick={ props.moveCard }
+								removeText={ '✖' }
+								onRemove={ props.removeCard }
 								readOnly
 							/>
 						))
@@ -79,7 +83,7 @@ Application.propTypes = {
 	}).isRequired,
 
 	cards: shape({
-		todo: arrayOf(
+		doing: arrayOf(
 			shape({
 				title: string.isRequired,
 				description: string.isRequired,
@@ -97,6 +101,7 @@ Application.propTypes = {
 
 	saveCard: func.isRequired,
 	moveCard: func.isRequired,
+	removeCard: func.isRequired,
 };
 
 export default Application;

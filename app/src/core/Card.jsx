@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ id, title, description, readOnly, activeColor, buttonText, onClick, children }) => {
+const Card = ({ id, title, description, readOnly, activeColor, clickText, onClick, removeText, onRemove, children }) => {
 	let titleInput;
 	let descriptionInput;
 
@@ -12,6 +12,20 @@ const Card = ({ id, title, description, readOnly, activeColor, buttonText, onCli
 			descriptionInput.value = '';
 		}
 	};
+
+	const _onRemove = () => {
+		if (id) onRemove(id);
+	};
+
+	const renderButton = (text, action) => (
+		<button
+			type="button"
+			className="btn btn-link pull-right btn-cta animate"
+			onClick={ action }
+		>
+			{ text }
+		</button>
+	);
 
 	return (
 		<div className={ `col-md-12 card animate ${activeColor}` }>
@@ -37,14 +51,13 @@ const Card = ({ id, title, description, readOnly, activeColor, buttonText, onCli
 			<div className="col-md-12">
 				{ children }
 				{
-					buttonText && onClick &&
-					<button
-						type="button"
-						className="btn btn-link pull-right btn-cta animate"
-						onClick={ _onClick }
-					>
-						{ buttonText }
-					</button>
+					clickText && onClick &&
+					renderButton(clickText, _onClick)
+				}
+
+				{
+					removeText && onRemove &&
+					renderButton(removeText, _onRemove)
 				}
 			</div>
 		</div>
@@ -54,11 +67,15 @@ const Card = ({ id, title, description, readOnly, activeColor, buttonText, onCli
 Card.defaultProps = {
 	title: '',
 	description: '',
-	buttonText: null,
+
+	clickText: null,
+	removeText: null,
+
 	setColor: null,
 	onClick: null,
 	readOnly: false,
 	children: null,
+	onRemove: null,
 };
 
 Card.propTypes = {
@@ -66,10 +83,12 @@ Card.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
 	activeColor: PropTypes.string.isRequired,
-	buttonText: PropTypes.string,
+	clickText: PropTypes.string,
+	removeText: PropTypes.string,
 	readOnly: PropTypes.bool,
 	children: PropTypes.node,
 	onClick: PropTypes.func,
+	onRemove: PropTypes.func,
 };
 
 export default Card;

@@ -2,7 +2,7 @@ import React from 'react';
 import * as ReactRedux from 'react-redux';
 
 import Application from './Application';
-import { saveCard, moveCard } from '../redux/modules/reducer';
+import { saveCard, moveCard, removeCard } from '../redux/modules/reducer';
 
 class ApplicationContainer extends React.Component {
 	render() {
@@ -23,6 +23,9 @@ const mapDispatchToProps = (dispatch) => ({
 	},
 	moveCard(id, title, description, color) {
 		dispatch(moveCard(id, title, description, color));
+	},
+	removeCard(id) {
+		dispatch(removeCard(id));
 	},
 });
 
