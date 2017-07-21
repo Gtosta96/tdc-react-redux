@@ -49,7 +49,11 @@ textarea {
 }
 
 .btn-card-options:hover {
-	border: 4px solid  #FFFFFF;
+	border: 4px solid  rgba(255,255,255,0.4);
+}
+
+.activeColor {
+	border: 4px solid  #FFFFFF;	
 }
 
 .btn-cta {
@@ -138,6 +142,11 @@ body {
 	/*padding: 0;*/
 }
 
+.done-section {
+	position: absolute;
+	right: 0;
+}
+
 .done-section .card {
 	padding: 0;
 	margin: 10px 0 -70px 0
@@ -150,3 +159,10 @@ body {
 .animate {
 	-webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;
 }
+
+@media (min-width: 600px) {
+  .card-cta-section {
+    margin-top: -20px;
+  }
+}
+ 

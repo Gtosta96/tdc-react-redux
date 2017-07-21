@@ -11,14 +11,14 @@ class ApplicationContainer extends React.Component {
 	}
 
 	componentWillMount() {
-		setInterval(() => {
-			this.setState({ counter: this.state.counter + 1 });
-		}, 1000);
+		// setInterval(() => {
+		// 	this.setState({ counter: this.state.counter + 1 });
+		// }, 1000);
 	}
 	render() {
 		return (
 			<div>
-				<div>{ this.state.counter }</div>
+				{/* <div>{ this.state.counter }</div> */}
 				<Application { ...this.props } />
 			</div>
 		);

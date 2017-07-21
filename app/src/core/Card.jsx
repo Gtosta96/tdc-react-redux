@@ -48,7 +48,7 @@ const Card = ({ id, title, description, readOnly, activeColor, clickText, onClic
 					disabled={ readOnly }
 				/>
 			</div>
-			<div className="col-md-12">
+			<div className={ `col-md-12 ${removeText ? 'col-xs-12 card-cta-section' : ''}` }>
 				{ children }
 				{
 					clickText && onClick &&

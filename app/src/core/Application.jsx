@@ -24,12 +24,13 @@ const Application = (props) => (
 								key={ color }
 								color={ color }
 								setColor={ props.setColor }
+								activeColor={ props.colors.active }
 							/>
 						))
 					}
 				</Card >
 			</div>
-			<div className="col-md-6" style={ { position: 'absolute', right: '0' } }>
+			<div className="col-md-6">
 				<div className="col-md-12 done-section">
 					<h2>done</h2>
 					{
@@ -50,7 +51,7 @@ const Application = (props) => (
 
 		<div className="row">
 			<div className="col-md-6">
-				<div className="col-md-12 doing-section">
+				<div className="col-md-12 col-xs-7 doing-section">
 					<h2>doing</h2>
 					{
 						props.cards.doing.map((card) => (
