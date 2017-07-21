@@ -5,9 +5,22 @@ import Application from './Application';
 import { saveCard, moveCard, removeCard } from '../redux/modules/reducer';
 
 class ApplicationContainer extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { counter: 0 };
+	}
+
+	componentWillMount() {
+		setInterval(() => {
+			this.setState({ counter: this.state.counter + 1 });
+		}, 1000);
+	}
 	render() {
 		return (
-			<Application { ...this.props } />
+			<div>
+				<div>{ this.state.counter }</div>
+				<Application { ...this.props } />
+			</div>
 		);
 	}
 }

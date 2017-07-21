@@ -6,8 +6,7 @@ const config = {
 	devtool: 'inline-sourcemap',
 	entry: [
 		'react-hot-loader/patch',
-		// 'webpack-dev-server/client?http://localhost:8080',
-		// 'webpack/hot/only-dev-server',
+		'webpack/hot/only-dev-server',
 		'./app.jsx',
 	],
 	output: {
@@ -35,7 +34,7 @@ const config = {
 			}, {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				loaders: ['react-hot-loader/webpack', 'babel-loader'],
+				loaders: ['babel-loader'],
 			},
 		],
 	},
@@ -45,6 +44,8 @@ const config = {
 		historyApiFallback: true,
 		open: true,
 		inline: true,
+		hot: true,
+		openPage: '',
 	},
 };
 
