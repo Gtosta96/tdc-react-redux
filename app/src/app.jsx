@@ -9,6 +9,7 @@ import configureStore from './redux/configureStore';
 import ApplicationContainer from './core/ApplicationContainer';
 
 const store = configureStore();
+// store.subscribe(() => localStorage.setItem('state', JSON.stringify(store.getState())));
 
 const render = Component => (
 	ReactDOM.render(
