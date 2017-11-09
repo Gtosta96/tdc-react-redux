@@ -1,5 +1,5 @@
-// const localStorageState = localStorage.getItem('state') ? JSON.parse(localStorage.getItem('state')) : null;
-const initialState = { // eslint-disable-line
+const localStorageState = localStorage.getItem('state') ? JSON.parse(localStorage.getItem('state')) : null;
+let initialState = { // eslint-disable-line
 	colors: {
 		available: ['Red', 'Pink', 'Purple', 'DeepPurple',
 			'Indigo', 'Blue', 'Cyan', 'Teal', 'Green',
@@ -13,7 +13,7 @@ const initialState = { // eslint-disable-line
 	},
 };
 
-// initialState = localStorageState || initialState;
+initialState = localStorageState || initialState;
 export default function reducer(state = initialState, action) {
 	switch (action.type) {
 		case 'SET_COLOR':
